@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The creative home of Zainab A. Jatau: writing, photography, and Zay & Form." />
+  <title>Zainab A. Jatau | A Creative Journal</title>
+  <style>
+    :root {
+      --ink: #292A2D;
+      --muted: #686A70;
+      --teal: #263B65;
+      --deep-teal: #263B65;
+      --pale: #E8EAF0;
+      --cream: #F7F1E5;
+      --peach: #C66B45;
+      --line: #E1D9CC;
+      --white: #FFFCF7;
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: 'Trebuchet MS', Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--cream); font-family: var(--sans); line-height: 1.65; }
+    a { color: var(--deep-teal); }
+    .announcement { background: var(--deep-teal); color: white; text-align: center; padding: .55rem 1rem; font-size: .78rem; letter-spacing: .08em; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(247,241,229,.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+    .nav { max-width: 1160px; margin: auto; padding: .85rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .logo { text-decoration: none; font-family: var(--serif); font-size: 1.35rem; font-weight: bold; letter-spacing: -.03em; white-space: nowrap; }
+    .logo span { color: var(--teal); }
+    nav { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: flex-end; }
+    nav a { font-size: .85rem; text-decoration: none; color: var(--ink); }
+    nav a:hover { color: var(--teal); }
+    .wrap { max-width: 1160px; margin: auto; padding: 0 1.25rem; }
+    .hero { padding: 5.5rem 0 4.5rem; display: grid; grid-template-columns: 1.15fr .85fr; gap: 3rem; align-items: center; }
+    .eyebrow { color: var(--teal); font-size: .75rem; letter-spacing: .16em; font-weight: bold; text-transform: uppercase; }
+    h1, h2, h3 { font-family: var(--serif); line-height: 1.12; font-weight: normal; }
+    h1 { font-size: clamp(3rem, 7vw, 5.8rem); letter-spacing: -.055em; margin: .8rem 0 1.2rem; }
+    h1 em { display: block; margin-top: 1.1rem; color: var(--teal); font-family: var(--sans); font-size: clamp(1.15rem, 2.4vw, 1.8rem); font-style: normal; font-weight: normal; letter-spacing: -.025em; line-height: 1.3; }
+    .hero p { max-width: 590px; color: var(--muted); font-size: 1.06rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.7rem; }
+    .btn { display: inline-block; border: 1px solid var(--deep-teal); border-radius: 999px; padding: .78rem 1.2rem; text-decoration: none; font-size: .88rem; transition: .2s ease; cursor: pointer; }
+    .btn.primary { color: white; background: var(--deep-teal); }
+    .btn.secondary { color: var(--deep-teal); background: transparent; }
+    .btn:hover { transform: translateY(-2px); }
+    .hero-art { min-height: 380px; position: relative; display: grid; place-items: center; }
+    .art-frame { width: min(100%, 380px); aspect-ratio: 4 / 5; background: var(--pale); border-radius: 48% 48% 8px 8px; overflow: hidden; position: relative; display: grid; place-items: center; border: 1px solid var(--line); }
+    .art-frame::before { content: ''; position: absolute; width: 68%; height: 68%; border: 1px solid #A9B8C8; border-radius: 50%; }
+    .art-frame::after { content: 'YOUR PORTRAIT'; position: absolute; bottom: 1.2rem; font-size: .7rem; letter-spacing: .2em; color: var(--muted); }
+    .art-initials { font-family: var(--serif); font-size: 8rem; color: var(--teal); opacity: .85; }
+    .floating-note { position: absolute; right: -1rem; bottom: 2rem; max-width: 185px; background: var(--peach); padding: 1rem 1.1rem; transform: rotate(4deg); font-family: var(--serif); font-size: 1.05rem; box-shadow: 0 8px 24px #292D2D12; }
+    section { padding: 5rem 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 1.5rem; margin-bottom: 2rem; }
+    .section-head h2 { margin: .35rem 0 0; font-size: clamp(2.2rem, 4vw, 3.5rem); letter-spacing: -.04em; }
+    .section-head p { max-width: 440px; margin: 0; color: var(--muted); }
+    .about-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 3rem; align-items: start; }
+    .profile-placeholder { min-height: 320px; border-radius: 8px 8px 45% 45%; background: linear-gradient(150deg, #DCE2E9, #C7775A); display: grid; place-items: center; color: var(--deep-teal); font-family: var(--serif); font-size: 2rem; text-align: center; padding: 1rem; }
+    .about-copy h3 { font-size: 2rem; margin: 0 0 1rem; }
+    .about-copy p { color: var(--muted); }
+    .soft { background: var(--pale); }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .card { background: var(--white); border: 1px solid var(--line); border-radius: 8px; padding: 1.4rem; min-height: 220px; display: flex; flex-direction: column; }
+    .card .tag { color: var(--teal); text-transform: uppercase; font-size: .7rem; letter-spacing: .13em; font-weight: bold; }
+    .card h3 { font-size: 1.55rem; margin: .8rem 0 .6rem; }
+    .card p { color: var(--muted); font-size: .92rem; margin-top: 0; }
+    .card a { margin-top: auto; text-decoration: none; font-size: .9rem; font-weight: bold; }
+    .photo-grid { display: grid; grid-template-columns: 1.15fr .85fr .85fr; grid-auto-rows: 220px; gap: .9rem; }
+    .photo { border-radius: 7px; background: linear-gradient(145deg, #DCE2E9, #E9C6B4); position: relative; overflow: hidden; display: flex; align-items: end; padding: 1rem; color: var(--ink); }
+    .photo:nth-child(2) { background: linear-gradient(145deg, #CBD5E2, #CBD5E2); }
+    .photo:nth-child(3) { background: linear-gradient(145deg, #E9C6B4, #E8D9C9); }
+    .photo:nth-child(4) { background: linear-gradient(145deg, #CBD5E2, #E9C6B4); grid-column: span 2; }
+    .photo span { background: rgba(255,254,250,.88); padding: .45rem .7rem; border-radius: 4px; font-size: .8rem; }
+    .feature { background: var(--deep-teal); color: white; border-radius: 10px; padding: clamp(1.5rem, 4vw, 3rem); display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+    .feature .eyebrow { color: #A9B8C8; }
+    .feature h2 { font-size: clamp(2.2rem, 4vw, 3.4rem); margin: .5rem 0 1rem; }
+    .feature p { color: #F1F6F3; }
+    .feature .btn { border-color: white; color: white; }
+    .book-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .book { display: flex; gap: 1.2rem; align-items: center; background: var(--white); padding: 1.2rem; border: 1px solid var(--line); border-radius: 8px; }
+    .book-cover { flex: 0 0 95px; height: 130px; background: var(--peach); display: grid; place-items: center; text-align: center; padding: .5rem; font-family: var(--serif); color: var(--deep-teal); }
+    .book h3 { margin: 0 0 .4rem; font-size: 1.35rem; }
+    .book p { margin: 0 0 .8rem; font-size: .85rem; color: var(--muted); }
+    .review-note { border-left: 3px solid var(--peach); padding: 1rem 1.5rem; background: #fffefa; color: var(--muted); }
+    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 3rem; }
+    .contact-copy h2 { font-size: clamp(2.5rem, 5vw, 4rem); margin: .4rem 0 1rem; }
+    .contact-copy p { color: var(--muted); }
+    form { display: grid; gap: 1rem; }
+    label { display: grid; gap: .35rem; font-size: .85rem; color: var(--muted); }
+    input, textarea { width: 100%; border: 1px solid var(--line); background: var(--white); padding: .9rem 1rem; border-radius: 5px; color: var(--ink); font: inherit; }
+    textarea { min-height: 135px; resize: vertical; }
+    .form-help { font-size: .78rem; color: var(--muted); }
+    .newsletter { background: #C7775A; padding: 2.3rem; border-radius: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+    .newsletter h2 { font-size: 2rem; margin: 0; }
+    .newsletter p { margin-bottom: 0; color: #465F5D; }
+    .newsletter form { display: flex; gap: .5rem; }
+    .newsletter input { min-width: 0; }
+    footer { border-top: 1px solid var(--line); padding: 2rem 1.25rem; color: var(--muted); font-size: .82rem; }
+    .footer-inner { max-width: 1160px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+    .socials { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .socials a { text-decoration: none; }
+    @media (max-width: 800px) {
+      .nav { align-items: flex-start; flex-direction: column; }
+      nav { justify-content: flex-start; gap: .75rem; }
+      .hero, .about-grid, .feature, .contact-grid, .newsletter { grid-template-columns: 1fr; }
+      .hero { padding-top: 3.5rem; gap: 1.5rem; }
+      .hero-art { min-height: 300px; }
+      .art-frame { width: min(80%, 300px); }
+      .floating-note { right: 0; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 1rem; }
+      .cards, .book-list { grid-template-columns: 1fr; }
+      .photo-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 170px; }
+      .photo:nth-child(4) { grid-column: span 1; }
+      .newsletter form { flex-direction: column; }
+    }
+
+    /* Zay & Form has its own visual identity, separate from the personal portfolio palette. */
+    .feature { background: #47263F; color: #FFF9FC; }
+    .feature .eyebrow { color: #D9C8E5; }
+    .feature p { color: #F1E7F1; }
+    .feature .btn { border-color: #D9C8E5; color: #FFF9FC; }
+    .feature .btn:hover { background: #C8B8D9; color: #47263F; }
+    .brand-chip { display:inline-block; margin-top:1rem; padding:.35rem .7rem; border-radius:999px; background:#C8B8D9; color:#47263F; font-size:.75rem; letter-spacing:.04em; }
+    
+
+    /* Editorial portfolio direction */
+    .hero { padding: 5rem 0 4rem; grid-template-columns: 1.08fr .92fr; gap: 2.5rem; }
+    .hero h1 { font-size: clamp(3.1rem, 7.4vw, 6rem); line-height: .98; }
+    .hero h1 .name-line { display:block; color:var(--ink); }
+    .hero h1 em { color:var(--deep-teal); }
+    .hero p { max-width: 450px; font-size: 1.05rem; }
+    .art-frame { width: min(100%, 440px); aspect-ratio: 4 / 4.5; border-radius: 46% 46% 8px 8px; background: #E4E7EC; }
+    .art-frame::before { width: 76%; height: 76%; border-color: #A9B8C8; }
+    .art-frame::after { content: 'A PHOTOGRAPH BY ZAY'; bottom: 1.1rem; }
+    .art-initials { font-size: 7rem; color:var(--deep-teal); }
+    .floating-note { background:var(--peach); color:#292A2D; }
+    .section-head h2 { color:var(--ink); }
+    .cards .card { transition: transform .2s ease, box-shadow .2s ease; }
+    .cards .card:hover { transform: translateY(-3px); box-shadow:0 12px 30px #263B6510; }
+    .photo { background: linear-gradient(145deg,#CBD5E2,#F7F1E5); }
+    .photo:nth-child(2) { background:linear-gradient(145deg,#A9B8C8,#E9C6B4); }
+    .photo:nth-child(3) { background:linear-gradient(145deg,#E9C6B4,#F7F1E5); }
+    .photo:nth-child(4) { background:linear-gradient(145deg,#CBD5E2,#E9C6B4); }
+    .newsletter { background:#E9C6B4; }
+    .newsletter p { color:#292A2D; }
+    .review-note { border-left-color:var(--peach); color:var(--ink); line-height:1.8; }
+    .publication { display:grid; grid-template-columns:minmax(160px,.7fr) 1.3fr; gap:2rem; align-items:center; }
+    .publication-image { min-height:260px; border-radius:8px; background:linear-gradient(150deg,#263B65,#A9B8C8 65%,#C66B45); display:grid; place-items:center; color:#F7F1E5; text-align:center; padding:1.5rem; font-family:var(--serif); font-size:1.5rem; }
+    .publication h3 { font-size:2rem; margin:.4rem 0; }
+    .eyebrow { color:var(--deep-teal); }
+    .feature { background:#47263F; }
+    .brand-chip { background:#C8B8D9; }
+    .newsletter h2 { color:#292A2D; }
+    @media (max-width:800px) { .hero { padding-top:3.5rem; } .publication { grid-template-columns:1fr; } .publication-image { min-height:220px; } }
+
+
+    .article-page { padding: 4.5rem 0; background: var(--white); border-top: 1px solid var(--line); }
+    .article-back { display: inline-block; margin: 0 0 1.5rem; font-size: .9rem; text-decoration: none; font-weight: 700; }
+    .long-read { max-width: 760px; margin: 0 auto; padding: clamp(1.4rem, 4vw, 3.5rem); background: var(--cream); border: 1px solid var(--line); border-radius: 8px; }
+    .long-read h2 { font-family: var(--serif); font-size: clamp(2.1rem, 5vw, 3.5rem); line-height: 1.12; margin: .45rem 0 .7rem; color: var(--teal); }
+    .article-subtitle { margin: 0 0 2rem; font-family: var(--serif); font-style: italic; color: var(--muted); font-size: 1.15rem; }
+    .article-body { max-width: 66ch; margin: 0 auto 2.5rem; font-family: var(--serif); font-size: 1.12rem; line-height: 1.95; }
+    .article-body p { margin: 0 0 1.35rem; }
+    @media (max-width: 600px) { .article-page { padding: 2.5rem 0; } .article-body { font-size: 1.03rem; line-height: 1.85; } }
+  </style>
+</head>
+<body>
+  
+  <header>
+    <div class="nav">
+      <a class="logo" href="#home">Zainab <span>A. Jatau.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a><a href="#writing">Writing</a><a href="#photography">Photography</a><a href="#video">Video</a><a href="#zay-form">Zay &amp; Form</a><a href="#published-work">In print</a><a href="#contact">Let's talk</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="wrap" id="home">
+      <section class="hero">
+        <div>
+          <div class="eyebrow">Writer · Photographer · Creative entrepreneur</div>
+          <h1><span class="name-line">Zainab</span><span class="name-line">A. Jatau.</span><em>A world of words, frames & ideas.</em></h1>
+          <div class="actions"><a class="btn primary" href="#explore">Explore my world</a><a class="btn secondary" href="#contact">Let's talk</a></div>
+        </div>
+        <div class="hero-art" aria-label="Space for one of Zay's photographs">
+          <div class="art-frame"><div class="art-initials">Z.</div></div>
+          <div class="floating-note">Beauty is everywhere, sometimes just waiting to be noticed.</div>
+        </div>
+      </section>
+    </div>
+
+    <section id="about" class="soft">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">A little introduction</div><h2>Well, hello there.</h2></div></div>
+        <div class="about-grid">
+          <div class="profile-placeholder">A photograph<br>of Zay</div>
+          <div class="about-copy"><h3>I'm Zainab, but you can call me Zay.</h3><p>I'm a writer, photographer and creative entrepreneur who loves helping people bring their ideas to life.</p><p>I believe beauty exists in the most unexpected places, sometimes just waiting to be noticed.</p><p>This is where my words, photographs and creative experiments meet. It's also home to Zay &amp; Form, where ideas take shape through creative strategy, storytelling and thoughtful visual communication.</p><p>I'm glad you're here. Have a look around.</p><div class="socials"><a href="https://www.instagram.com/_agirlzay" target="_blank" rel="noopener noreferrer">Personal Instagram</a><a href="https://x.com/zai_bukar" target="_blank" rel="noopener noreferrer">X</a><a href="https://www.linkedin.com/in/zainababubakar" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://linktr.ee/zainab.abubakar" target="_blank" rel="noopener noreferrer">Linktree</a><a href="https://open.substack.com/pub/zamirah?utm_source=share&utm_medium=android&r=2bulpn">Mira's Corner</a></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="explore">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">A few ways in</div><h2>Explore my world.</h2></div></div>
+        <div class="cards">
+          <article class="card"><div class="tag">Words</div><h3>Writing &amp; Reflections</h3><p>A little of what I've written and what I'm still trying to make sense of.</p><a href="#writing">Read along ↗</a></article>
+          <article class="card"><div class="tag">Frames</div><h3>Photography Exhibition</h3><p>Moments, details and places I've stopped to notice.</p><a href="#photography">Step inside ↗</a></article>
+          <article class="card"><div class="tag">Ideas</div><h3>Zay &amp; Form</h3><p>Creative strategy, storytelling and thoughtful visual communication.</p><a href="#zay-form">Explore Zay &amp; Form ↗</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="writing">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">From my notebook</div><h2>Writing &amp; Reflections</h2><p>A little of what I've written and what I'm still trying to make sense of.</p></div></div>
+        <div class="cards">
+          <article class="card"><div class="tag">Published on Mira's Corner</div><h3>Grief Holds You in a Waltz</h3><p></p><a href="#grief-article">Read on this website ↗</a></article>
+          <article class="card"><div class="tag">Published on Mira's Corner</div><h3>Finding the Light</h3><p></p><a href="#finding-light-article">Read on this website ↗</a></article>
+          <article class="card"><div class="tag">More writing</div><h3>Mira's Corner</h3><p>More of my words, over on Substack.</p><a href="https://open.substack.com/pub/zamirah?utm_source=share&utm_medium=android&r=2bulpn">Visit Mira's Corner ↗</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="grief-article" class="article-page"><div class="wrap"><a class="article-back" href="#writing">← Back to Writing &amp; Reflections</a><article class="long-read"><div class="eyebrow">Mira’s Corner · Writing &amp; Reflections</div><h2>Grief Holds You in a Waltz</h2><p class="article-subtitle">On living with absence and the rhythm of remembering</p><div class="article-body"><p>Grief Holds You in a Waltz<br>On living with absence and the rhythm of remembering</p><p>It could be something small, so subtle that on a normal day, you wouldn’t notice it. Like the gentle whiff of perfume on a person, or that fabric that belonged to your aunt, and even after what seems like a decade of washing, it refuses to let go of her scent.</p><p>It could be the laughter that sounded like theirs, its cadence, the slow steps of their voice as it rolls out of their throat, or on days like today, the memory of an abandoned camera plugged into your laptop, revealing thousands of pictures, each one lost in a different timeline, forgotten, until they surface again.</p><p>Time slides from the tips of my fingers, every press on the arrow taking me through a different lifetime. My sister at four, now twenty. My first day in boarding school, now freshly graduated from the university. My mother, so young and full of energy. My uncle, of loving memory, standing beside the Ostrich cage at Gamji Gate.</p><p>Grief is strange. Shapeshifting into a million forms, never fully becoming, crude and unkind. I imagine it is an entity, dancing through halls and lounging in the shadows of people, leaving them just long enough to think they have it all figured out, or that time has been kind enough to give them the mercy of forgetting, then in comes a voice, a thought, a memory, or a picture, startling the wound awake. And then the dance begins again.</p><p>I remember everything like it was yesterday, a motion so memorized in the subconscious that it only surfaces with the wake of every death. My aunt, a friend, or a colleague. This is when the first break happens, the twist and denial. The upheaval. Every time I have watched the existence of a person I once knew dissipate, the part of me that knew them tries to drag them back into my memories: a smile, a nod, the answer to a greeting, the briefest eye contact.</p><p>We dance around this feeling.<br>The knowledge of their absence<br>The frailty of our own existence.<br>The chill of every moment and what the next minute might bring.</p><p>The days that follow are hazy, silent, sorrowing. Watching grief take hold of bodies, almost mockingly, as if to say, “Look! See just how much influence I have on this one.”</p><p>Time seems to move too fast, demanding that you make peace with what has happened. It tells you in every way that it will not wait. Urging you to catch up. To move. To be alright. To smile. To laugh. You watch with a dawning realization: you indeed have to continue living.</p><p>There wasn’t any choice to begin with. Time will happen, and you will laugh, sometimes become too immersed, and then you will remember. On an ordinary day, or a special one, a whiff of perfume, a laugh, or a photograph will call them back. You’ll be reminded of the space they once filled, and you will dance with grief again.</p></div><a class="article-back" href="#writing">← Back to the collection</a></article></div></section>
+
+    <section id="finding-light-article" class="article-page"><div class="wrap"><a class="article-back" href="#writing">← Back to Writing &amp; Reflections</a><article class="long-read"><div class="eyebrow">Mira’s Corner · Writing &amp; Reflections</div><h2>Finding the Light</h2><p class="article-subtitle">Where you are at peace with yourself</p><div class="article-body"><p>Finding the Light<br>Where you are at peace with yourself</p><p>I have a soft spot for quotations, or just any sort of literature that holds so much weight, especially the ones that lift my spirits or ferry me into a state of mind so beautiful that nothing could ever touch the joy it leaves. So on this note, I will begin with two quotes that this very beautiful Monday morning which did not start on the note I planned, have managed to defy all odds and stayed in my mind. The first one being “if you have the ability to love, love yourself first” and the second a line I heard some years back from one of Maryam Bukar’s poetry performance, where she says “there is no pouring from an empty jar”. Now the latter have stuck with me over the years, in all my struggles and on days when I needed someone to pep talk me back into feeling like myself, or just days when I try to be there for people even at my lowest. We all have our various journey and struggles we’ve encountered along the way, I believe you will agree with me when I say that there is a certain joy that engulfs one when they look back through all the years and realize just how far they’ve come and how strong they have been. I don’t know your journey dear reader, and I wouldn’t know unless you summon the courage to tell it. I am a sucker for trying to convince people to tell their stories, but I realize it takes time, because it has happened to me and so I say to you take your time, but don’t take too long on it. As I mentioned earlier, I do not know your story, but I know mine. And you’re probably reading it, even if it’s not the juicy part, lol.</p><p>See, for years I was a shadow of myself. I’ve heard versions of who I was, the ones I agree to, the ones I’m not so sure of, and even the ones I’m certain I never met the person. Good thing is, I am not someone that holds onto opinions for long, at least not anymore, and having achieved that and a certain level of fulfilment, I no longer try to morph myself into anything I am not. The moment I became true to myself, everything else mattered less, and that is one of the most beautiful transformation I have ever experienced. That and also realizing that no matter how I tried, I couldn’t change certain parts of me for people, in this way I mean physically. Because having learned to love the way I looked, that definitely influenced everything in my journey. But it wasn’t just realizing that, it was coming to terms with the fact that no matter how I tried to curve myself to let someone love me, I was depriving someone of loving me for who I really was, and that really opens up a whole new perspective. And who was that someone I was depriving? Me!</p><p>You want to be a full cup? Yes, of course you can be. But it isn’t how full the cup is, I have always believed it is what the cup holds. And it is up to you to determine that. I hope that someday when you look back the way you’ve come, that you are proud of yourself and that you are filled with the satisfaction that it was worth it.</p><p>I will draw with a conclusion here, if you are wondering what the first thing you have to do on the journey to accepting yourself better is, the first place to take a visit is your head. That place where all the voices live, that is your map. I used to chide myself a lot, and trust me, no matter what someone had to say to me, I have probably already said that to myself countless times, or worse. What I’m trying to say is, I was one of my greatest voice of reason, and even though half the time what I did was nothing compared to that, or perhaps way brutal than that, I realized I needed to be a strong supporter to myself too. It wasn’t all about chiding myself in a way that wouldn’t sting when it comes from a voice outside my head. No, it was about building a certain level of confidence, raising an awareness that comes with the fulfilment of knowing that whatever the outside voice said, I was able to determine how it influenced me, or what right it had in my perspective. I know you might probably be thinking, “Well, isn’t that just arrogance? You know, not wanting to hear other’s views and just thinking you’re the all and everything?” I might not know much about the latter, and honestly, I am still yet to understand this concept. What I do know though, is that this conversation, the one where you sit and you are brutally honest with yourself, the one where you trace back the beginning of those wounds and tell yourself what you’ve waited to hear, the one where for once you see yourself for who you really are instead of who you could or should be, that one conversation would change your life in ways you can never imagine.</p></div><a class="article-back" href="#writing">← Back to the collection</a></article></div></section>
+
+    <section id="photography" class="soft">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">Through my lens</div><h2>Photography exhibition</h2></div></div>
+        <div class="photo-grid">
+          <div class="photo"><span>Your photograph</span></div><div class="photo"><span>A place</span></div><div class="photo"><span>A detail</span></div><div class="photo"><span>A moment worth keeping</span></div>
+        </div>
+        <div class="actions"><a class="btn secondary" href="https://www.instagram.com/azayshot_" target="_blank" rel="noopener noreferrer">More from A Zay Shot ↗</a></div>
+      </div>
+    </section>
+
+    <section id="zay-form">
+      <div class="wrap">
+        <div class="feature"><div><div class="eyebrow">A creative venture</div><h2>Zay &amp; Form</h2><span class="brand-chip">Independent creative studio · Plum &amp; lavender</span><p>Creative ideas, thoughtful visuals, and work by Zay &amp; Form.</p><a class="btn" href="mailto:YOUR-EMAIL@example.com?subject=Zay%20%26%20Form%20enquiry">Enquire about a project ↗</a></div><div><div class="eyebrow">What I'm exploring</div><h3 style="font-size:1.8rem;margin:.5rem 0">Creative direction · Brand storytelling · Visual ideas</h3></div></div>
+      </div>
+    </section>
+
+    <section id="video" class="soft">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">Moving stories</div><h2>Video Projects</h2></div></div>
+        <div class="review-note">Completed video projects will appear here.</div>
+      </div>
+    </section>
+
+    <section id="books">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">Read &amp; keep</div><h2>Books &amp; Downloads</h2></div></div>
+        <p style="color:var(--muted);max-width:620px">A space for future collections, downloads and little things worth keeping.</p>
+      </div>
+    </section>
+
+    <section id="published-work">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">In print</div><h2>Where My Writing Has Appeared</h2></div></div>
+        <div class="publication">
+          <div class="publication-image">Someone Should<br>Hold Farida<br><small style="font: .75rem Arial,sans-serif;display:block;margin-top:1rem">Book cover photo to be added</small></div>
+          <div><div class="eyebrow">An anthology appearance</div><h3>Stepping on Thorns</h3><p>A story featured in <em>Someone Should Hold Farida</em>, an anthology from the Flame Tree Writers' Residency.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="reviews">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">Kind words</div><h2>Notes from Others</h2></div></div>
+        <div class="review-note"><div class="eyebrow">On Stepping on Thorns</div><p>“I read it like I was reading a scripture.”</p><p>“I love how conventional the language is, yet it has a good rhythm and a poetic taste on the tongue.”</p><p>“Trust me, you have the talent for storytelling. You shouldn't waste it.”</p><strong>— A.</strong></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-copy" style="max-width:760px"><div class="eyebrow">Have something in mind?</div><h2>Let's talk!</h2><p>Have something in mind? A project, a collaboration, an interesting idea, or just something you'd like to say? My inbox is open.</p><p>I'd love to hear from you.</p><p><a class="btn primary" href="mailto:YOUR-EMAIL@example.com">Send me a note ↗</a></p><div class="socials"><a href="https://www.instagram.com/_agirlzay" target="_blank" rel="noopener noreferrer">Personal Instagram</a><a href="https://x.com/zai_bukar" target="_blank" rel="noopener noreferrer">X</a><a href="https://www.linkedin.com/in/zainababubakar" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://linktr.ee/zainab.abubakar" target="_blank" rel="noopener noreferrer">Linktree</a><a href="https://open.substack.com/pub/zamirah?utm_source=share&utm_medium=android&r=2bulpn">Mira's Corner</a></div></div>
+      </div>
+    </section>
+
+    <section style="padding-top:0" id="notes-from-zay">
+      <div class="wrap">
+        <div class="newsletter"><div><div class="eyebrow">Every now and then</div><h2>Notes from Zay</h2><p>New writing, creative projects, little discoveries, and whatever else I feel like sharing. Straight to your inbox, every now and then.</p></div><form onsubmit="event.preventDefault(); alert('This sign-up form is a prototype. Connect an email newsletter service before publishing.');"><label style="flex:1"><span class="form-help">Your email address</span><input type="email" placeholder="you@example.com" required></label><button class="btn primary" type="submit">Subscribe</button></form></div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="footer-inner"><div>© <span id="year"></span> Zainab A. Jatau. Made with care.</div><div class="socials"><a href="https://www.instagram.com/_agirlzay" target="_blank" rel="noopener noreferrer">Personal Instagram</a><a href="https://x.com/zai_bukar" target="_blank" rel="noopener noreferrer">X</a><a href="https://www.linkedin.com/in/zainababubakar" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://linktr.ee/zainab.abubakar" target="_blank" rel="noopener noreferrer">Linktree</a><a href="https://open.substack.com/pub/zamirah?utm_source=share&utm_medium=android&r=2bulpn">Mira's Corner</a><a href="#home">Back to top ↑</a></div></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
