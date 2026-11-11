@@ -7,13 +7,13 @@
       "photos": [
         {
           "image": "/assets/images/devils-corridor.jpg",
-          "alt": "Black and white photograph looking down a long, empty covered walkway with concrete pillars and a patterned block wall",
-          "caption": "Devil’s Corridor"
+          "caption": "Devil’s Corridor",
+          "alt": "Black and white photograph looking down a long, empty covered walkway with concrete pillars and a patterned block wall"
         },
         {
           "image": "/assets/images/weight-of-small-things.jpg",
-          "alt": "Sepia photograph of a young boy standing on a road holding a speckled hen in his arms and looking straight at the camera, with power lines and walking figures behind him",
-          "caption": "Weight of Small Things"
+          "caption": "Weight of Small Things",
+          "alt": "Sepia photograph of a young boy standing on a road holding a speckled hen in his arms and looking straight at the camera, with power lines and walking figures behind him"
         }
       ]
     },
@@ -22,8 +22,8 @@
       "photos": [
         {
           "image": "/assets/images/hold-my-hand.jpg",
-          "alt": "Two women in rust-orange hijabs lean their heads together with eyes closed, seen from below against a mustard wall and teal sky",
-          "caption": "Hold My Hand"
+          "caption": "Hold My Hand",
+          "alt": "Two women in rust-orange hijabs lean their heads together with eyes closed, seen from below against a mustard wall and teal sky"
         }
       ]
     },
@@ -32,13 +32,13 @@
       "photos": [
         {
           "image": "/assets/images/chronicles-of-kasuwan-kawo.jpg",
-          "alt": "A yellow commercial minibus in motion, blurred, passing trees and a rust-coloured roof",
-          "caption": "Chronicles of Kasuwan Kawo"
+          "caption": "Chronicles of Kasuwan Kawo",
+          "alt": "A yellow commercial minibus in motion, blurred, passing trees and a rust-coloured roof"
         },
         {
           "image": "/assets/images/identity.jpg",
-          "alt": "Close portrait of a woman in profile wearing a purple and turquoise patterned head wrap and a gold triangular earring, looking to the side",
-          "caption": "Identity"
+          "caption": "Identity",
+          "alt": "Close portrait of a woman in profile wearing a purple and turquoise patterned head wrap and a gold triangular earring, looking to the side"
         }
       ]
     },
@@ -47,18 +47,27 @@
       "photos": [
         {
           "image": "/assets/images/threshold.jpg",
-          "alt": "A broken window frame with jagged glass, glowing peach light and a pale wall beyond, set in deep shadow",
-          "caption": "Threshold"
+          "caption": "Threshold",
+          "alt": "A broken window frame with jagged glass, glowing peach light and a pale wall beyond, set in deep shadow"
         },
         {
           "image": "/assets/images/lift.jpg",
-          "alt": "Low-angle close portrait of a woman in a rust-coloured head wrap, face turned up toward a wide teal sky with soft clouds at the edges",
-          "caption": "Lift"
+          "caption": "Lift",
+          "alt": "Low-angle close portrait of a woman in a rust-coloured head wrap, face turned up toward a wide teal sky with soft clouds at the edges"
         },
         {
           "image": "/assets/images/held-breath.jpg",
-          "alt": "Black and white portrait of a woman in a dark hijab pressing a bright blue balloon to her face, eyes looking sideways at the camera",
-          "caption": "Held Breath"
+          "caption": "Held Breath",
+          "alt": "Black and white portrait of a woman in a dark hijab pressing a bright blue balloon to her face, eyes looking sideways at the camera"
+        }
+      ]
+    },
+    {
+      "title": "Memories",
+      "photos": [
+        {
+          "image": "/assets/images/1790777737797.jpg",
+          "caption": "Ancestor"
         }
       ]
     }
