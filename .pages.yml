@@ -1,0 +1,491 @@
+media:
+  input: assets/images
+  output: /assets/images
+  categories:
+  - image
+content:
+- name: home
+  label: Home (top of the page)
+  type: file
+  path: content/home.json
+  format: json
+  fields:
+  - name: kicker
+    label: Small line above your name
+    type: string
+  - name: first_name
+    label: 'Name: first line'
+    type: string
+  - name: last_name
+    label: 'Name: second line'
+    type: string
+  - name: tagline
+    label: Tagline under your name
+    type: string
+  - name: quote
+    label: Quote
+    type: text
+    description: Type it without quotation marks; they are added for you.
+  - name: hero_image
+    label: Top photo
+    type: image
+  - name: hero_alt
+    label: Top photo description
+    type: text
+    description: Describe the picture in one sentence, for people who use screen readers. Also shows if the image
+      cannot load.
+  - name: cta_primary
+    label: First link text (goes to "Explore")
+    type: string
+  - name: cta_secondary
+    label: Second link text (goes to Contact)
+    type: string
+  - name: ticker
+    label: Scrolling line
+    type: string
+    description: The text that scrolls across the band under the top section.
+- name: about
+  label: About
+  type: file
+  path: content/about.json
+  format: json
+  fields:
+  - name: label
+    label: Small line above the heading
+    type: string
+  - name: heading
+    label: Heading
+    type: string
+  - name: photo
+    label: Your photo
+    type: image
+  - name: photo_alt
+    label: Photo description
+    type: text
+    description: Describe the picture in one sentence, for people who use screen readers. Also shows if the image
+      cannot load.
+  - name: subheading
+    label: Sub-heading
+    type: string
+  - name: text
+    label: Your introduction
+    type: text
+    description: Leave a blank line between paragraphs.
+- name: explore
+  label: Explore my world (three cards)
+  type: file
+  path: content/explore.json
+  format: json
+  fields:
+  - name: label
+    label: Small line above the heading
+    type: string
+  - name: heading
+    label: Heading
+    type: string
+  - name: cards
+    label: Cards
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{title}'
+    fields:
+    - name: tag
+      label: Small label
+      type: string
+    - name: title
+      label: Title
+      type: string
+    - name: text
+      label: Description
+      type: text
+    - name: link_text
+      label: Link text
+      type: string
+    - name: target
+      label: Where it goes
+      type: select
+      options:
+        values:
+        - name: about
+          label: About
+        - name: writing
+          label: Writing & Reflections
+        - name: photography
+          label: Photography
+        - name: video
+          label: Video
+        - name: publications
+          label: Publications
+        - name: notes
+          label: Notes
+        - name: podcast
+          label: Podcast
+        - name: zayform
+          label: Zay & Form
+        - name: contact
+          label: Contact
+    description: The look is designed for three cards.
+- name: writing
+  label: Writing & Reflections
+  type: file
+  path: content/writing.json
+  format: json
+  fields:
+  - name: heading
+    label: Heading
+    type: string
+  - name: intro
+    label: Intro line
+    type: text
+  - name: essays
+    label: Essays and reflections
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{title}'
+    fields:
+    - name: title
+      label: Title
+      type: string
+    - name: subtitle
+      label: Subtitle
+      type: string
+    - name: date
+      label: Date
+      type: string
+      description: Shown as typed, e.g. 4 October 2025.
+    - name: excerpt
+      label: Short preview
+      type: text
+      description: Optional. If left empty, the start of the essay is used.
+    - name: body
+      label: Full text
+      type: text
+      description: Leave a blank line between paragraphs. A single line break inside a paragraph is kept (for poems).
+        Put *stars* around a word to italicise it.
+    - name: original_url
+      label: Link to the original (optional)
+      type: string
+    - name: original_label
+      label: Link text
+      type: string
+      description: e.g. Read the original on Substack
+    description: Newest first is the usual order. Drag to reorder.
+  - name: more_title
+    label: 'Bottom box: title'
+    type: string
+  - name: more_text
+    label: 'Bottom box: text'
+    type: text
+  - name: more_button_text
+    label: 'Bottom box: button text'
+    type: string
+  - name: more_button_url
+    label: 'Bottom box: button link'
+    type: string
+- name: photography
+  label: Photography
+  type: file
+  path: content/photography.json
+  format: json
+  fields:
+  - name: heading
+    label: Heading
+    type: string
+  - name: intro
+    label: Intro line
+    type: text
+  - name: collections
+    label: Collections
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{title}'
+    fields:
+    - name: title
+      label: Collection name
+      type: string
+    - name: photos
+      label: Photos in this collection
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{caption}'
+      fields:
+      - name: image
+        label: Photo
+        type: image
+      - name: caption
+        label: Title shown under the photo
+        type: string
+      - name: alt
+        label: Photo description
+        type: text
+        description: Describe the picture in one sentence, for people who use screen readers. Also shows if the
+          image cannot load.
+    description: Collections are numbered 01, 02, 03... automatically, in this order.
+  - name: instagram_text
+    label: Instagram line
+    type: string
+  - name: instagram_handle
+    label: Instagram handle
+    type: string
+  - name: instagram_url
+    label: Instagram link
+    type: string
+- name: video
+  label: Video
+  type: file
+  path: content/video.json
+  format: json
+  fields:
+  - name: heading
+    label: Heading
+    type: string
+  - name: intro
+    label: Intro line
+    type: text
+  - name: videos
+    label: Videos
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{title}'
+    fields:
+    - name: title
+      label: Title
+      type: string
+    - name: url
+      label: Link to watch it
+      type: string
+      description: YouTube, Google Drive, Instagram, anywhere.
+    - name: thumbnail
+      label: Thumbnail picture
+      type: image
+    - name: alt
+      label: Thumbnail description
+      type: text
+      description: Describe the picture in one sentence, for people who use screen readers. Also shows if the image
+        cannot load.
+    - name: description
+      label: Short description (optional)
+      type: text
+    - name: link_text
+      label: Link text
+      type: string
+      description: e.g. Watch the video
+- name: publications
+  label: Books & Publications
+  type: file
+  path: content/publications.json
+  format: json
+  fields:
+  - name: heading
+    label: Heading
+    type: string
+  - name: intro
+    label: Intro line
+    type: text
+  - name: items
+    label: Publications
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{title}'
+    fields:
+    - name: title
+      label: Title
+      type: string
+    - name: cover
+      label: Cover picture
+      type: image
+      description: Optional. Without one, the title is shown on a coloured cover.
+    - name: cover_alt
+      label: Cover description
+      type: text
+      description: Describe the picture in one sentence, for people who use screen readers. Also shows if the image
+        cannot load.
+    - name: description
+      label: Description
+      type: text
+      description: Put *stars* around a title to italicise it. A line break is kept.
+    - name: link_text
+      label: Link text (optional)
+      type: string
+    - name: link_url
+      label: Link (optional)
+      type: string
+    - name: credit
+      label: Credit line (optional)
+      type: string
+      description: e.g. Image by someone
+  - name: note_text
+    label: 'Line under the shelf: text before the link'
+    type: string
+  - name: note_link_text
+    label: 'Line under the shelf: link text'
+    type: string
+  - name: note_link_url
+    label: 'Line under the shelf: link'
+    type: string
+- name: notes
+  label: Notes from Others
+  type: file
+  path: content/notes.json
+  format: json
+  fields:
+  - name: heading
+    label: Heading
+    type: string
+  - name: intro
+    label: Intro line
+    type: text
+  - name: notes
+    label: Notes
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{about}'
+    fields:
+    - name: about
+      label: What it is about
+      type: string
+      description: e.g. On Stepping on Thorns
+    - name: quote
+      label: Highlighted line
+      type: text
+      description: Type it without quotation marks; they are added for you.
+    - name: message
+      label: The rest of the note
+      type: text
+    - name: from
+      label: From
+      type: string
+      description: Only use a name with the writer’s permission. An initial is fine.
+- name: podcast
+  label: Podcast
+  type: file
+  path: content/podcast.json
+  format: json
+  fields:
+  - name: heading
+    label: Heading
+    type: string
+  - name: status
+    label: Label
+    type: string
+    description: e.g. Coming soon. Leave empty to hide.
+- name: zayform
+  label: Zay & Form
+  type: file
+  path: content/zayform.json
+  format: json
+  fields:
+  - name: heading
+    label: Heading
+    type: string
+  - name: label
+    label: Small line
+    type: string
+  - name: intro
+    label: Intro line
+    type: text
+  - name: logo
+    label: Logo
+    type: image
+  - name: logo_alt
+    label: Logo description
+    type: text
+    description: Describe the picture in one sentence, for people who use screen readers. Also shows if the image
+      cannot load.
+  - name: logo_caption
+    label: Line under the logo
+    type: string
+  - name: services
+    label: What Zay & Form does
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{title}'
+    fields:
+    - name: title
+      label: Title
+      type: string
+    - name: text
+      label: Description
+      type: text
+  - name: button_text
+    label: Button text
+    type: string
+  - name: enquiry_email
+    label: Email that enquiries go to
+    type: string
+  - name: enquiry_subject
+    label: Email subject line that is pre-filled
+    type: string
+  - name: or_write_text
+    label: Text before the email address
+    type: string
+- name: contact
+  label: Contact
+  type: file
+  path: content/contact.json
+  format: json
+  fields:
+  - name: label
+    label: Small line above the heading
+    type: string
+  - name: heading
+    label: Heading
+    type: string
+  - name: intro
+    label: Intro
+    type: text
+  - name: email
+    label: Email address
+    type: string
+  - name: links
+    label: Other links
+    type: object
+    list:
+      collapsible:
+        collapsed: true
+        summary: '{label}'
+    fields:
+    - name: label
+      label: Label
+      type: string
+      description: e.g. LinkedIn
+    - name: text
+      label: Link text
+      type: string
+      description: e.g. your handle
+    - name: url
+      label: Link
+      type: string
+  - name: newsletter_title
+    label: 'Newsletter box: title'
+    type: string
+  - name: newsletter_text
+    label: 'Newsletter box: text'
+    type: text
+  - name: subscribe_url
+    label: Newsletter sign-up address
+    type: string
+    description: Leave this as it is unless you move your newsletter.
+  - name: newsletter_source
+    label: Newsletter source tag
+    type: string
+    description: Leave this as it is.
+  - name: signup_note
+    label: Small print under the box
+    type: string
