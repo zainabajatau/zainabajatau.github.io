@@ -1,0 +1,27 @@
+{
+  "label": "A few ways in",
+  "heading": "Explore my world.",
+  "cards": [
+    {
+      "tag": "Words",
+      "title": "Writing & Reflections",
+      "text": "A little of what I’ve written and what I’m still trying to make sense of.",
+      "link_text": "Read along",
+      "target": "writing"
+    },
+    {
+      "tag": "Frames",
+      "title": "Photography Exhibition",
+      "text": "Moments, details and places I’ve stopped to notice.",
+      "link_text": "Step inside",
+      "target": "photography"
+    },
+    {
+      "tag": "Ideas",
+      "title": "Zay & Form",
+      "text": "Creative strategy, storytelling and thoughtful visual communication.",
+      "link_text": "Explore Zay & Form",
+      "target": "zayform"
+    }
+  ]
+}

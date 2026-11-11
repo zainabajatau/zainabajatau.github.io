@@ -1,0 +1,26 @@
+{
+  "heading": "Zay & Form",
+  "label": "A creative venture",
+  "intro": "Creative ideas, thoughtful visuals, and work by Zay & Form.",
+  "logo": "/assets/images/zay-and-form-logo.jpg",
+  "logo_alt": "Zay & Form logo: teal and orange brushstrokes above the name Zay & Form",
+  "logo_caption": "Ideas take many forms.",
+  "services": [
+    {
+      "title": "Creative Direction",
+      "text": "Every idea starts somewhere. We help shape those ideas, explore possibilities and find creative ways to make them work."
+    },
+    {
+      "title": "Brand Storytelling",
+      "text": "Every brand has something to say. We help find the right words, visuals and approach to tell stories people can connect with."
+    },
+    {
+      "title": "Visual Ideas",
+      "text": "Sometimes, an idea is better shown than explained. We explore ways to bring concepts to life through images, design and visual storytelling."
+    }
+  ],
+  "button_text": "Enquire about a project",
+  "enquiry_email": "zainaabkr@gmail.com",
+  "enquiry_subject": "Zay & Form enquiry",
+  "or_write_text": "Or write to"
+}

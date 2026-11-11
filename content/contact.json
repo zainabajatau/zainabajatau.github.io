@@ -1,0 +1,28 @@
+{
+  "label": "Have something in mind?",
+  "heading": "Let’s talk!",
+  "intro": "A project, a collaboration, an interesting idea, or just something you’d like to say? My inbox is open. I’d love to hear from you.",
+  "email": "zainaabkr@gmail.com",
+  "links": [
+    {
+      "label": "Personal Instagram",
+      "text": "@_agirlzay",
+      "url": "https://www.instagram.com/_agirlzay/"
+    },
+    {
+      "label": "X",
+      "text": "@zai_bukar",
+      "url": "https://x.com/zai_bukar"
+    },
+    {
+      "label": "LinkedIn",
+      "text": "Zainab Abubakar",
+      "url": "https://www.linkedin.com/in/zainababubakar"
+    }
+  ],
+  "newsletter_title": "Notes from Zay",
+  "newsletter_text": "New writing, creative projects, little discoveries, and whatever else I feel like sharing. Straight to your inbox, every now and then.",
+  "subscribe_url": "https://zamirah.substack.com/api/v1/free?nojs=true",
+  "newsletter_source": "zainabajatau-site",
+  "signup_note": "You’ll get a confirmation from Substack. Unsubscribe any time."
+}

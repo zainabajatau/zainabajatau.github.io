@@ -1,0 +1,14 @@
+{
+  "heading": "Video Projects",
+  "intro": "Moving stories. Completed video projects will appear here.",
+  "videos": [
+    {
+      "title": "Kaduna, Gida",
+      "url": "https://drive.google.com/file/d/1x4TqDsKlhzjXcQ1ZC1ekcTUM3rvEVHBT/view?usp=drive_link",
+      "thumbnail": "/assets/images/video-kaduna-gida.jpg",
+      "alt": "Title card reading Kaduna Gida over a hazy roadside view with a river and trees",
+      "description": "",
+      "link_text": "Watch the video"
+    }
+  ]
+}

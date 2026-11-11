@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zainab A. Jatau | A Creative Journal</title>
+<meta name="description" content="A world of words, frames & ideas. The creative journal of Zainab A. Jatau: writing, photography, video, publications and more.">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,800;1,9..144,400;1,9..144,800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!--
+  HOW THIS PAGE WORKS
+  Everything you read on this site (text, photos, links) lives in the /content folder
+  and the /assets/images folder, and is edited through Pages CMS (see HOW-TO-EDIT.md).
+  site.js reads the /content files and builds the page. You should not need to touch this file,
+  except to change the menu names below or the page title and description above.
+-->
+
+<header class="nav" id="top">
+  <a class="brand" href="#home">Zainab A. Jatau</a>
+  <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+  <nav id="menu" aria-label="Main">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#writing">Writing &amp; Reflections</a></li>
+      <li><a href="#photography">Photography</a></li>
+      <li><a href="#video">Video</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#notes">Notes</a></li>
+      <li><a href="#podcast">Podcast</a></li>
+      <li><a href="#zayform">Zay &amp; Form</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <noscript><p style="padding:8rem 2rem;text-align:center">This site needs JavaScript switched on to show its content.</p></noscript>
+</main>
+
+<footer class="site">© <span id="yr">2026</span> <span id="foot-name">Zainab A. Jatau</span>. All rights reserved.</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" role="dialog" aria-modal="true" aria-label="Photograph viewer" hidden>
+  <button class="lb-close" aria-label="Close viewer">✕</button>
+  <button class="lb-prev" aria-label="Previous photograph">‹</button>
+  <div class="lb-stage"></div>
+  <button class="lb-next" aria-label="Next photograph">›</button>
+  <span class="lb-count" aria-live="polite"></span>
+</div>
+
+<script src="site.js"></script>
+</body>
+</html>
