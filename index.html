@@ -29,12 +29,21 @@
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#writing">Writing &amp; Reflections</a></li>
-      <li><a href="#photography">Photography</a></li>
-      <li><a href="#video">Video</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#notes">Notes</a></li>
-      <li><a href="#podcast">Podcast</a></li>
+      <li class="has-sub">
+        <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-writing">Writing <span class="caret" aria-hidden="true">&#9662;</span></button>
+        <ul class="subnav" id="sub-writing">
+          <li><a href="#writing">Writing &amp; Reflections</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#notes">Notes</a></li>
+        </ul>
+      </li>
+      <li class="has-sub">
+        <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-visual">Visual Work <span class="caret" aria-hidden="true">&#9662;</span></button>
+        <ul class="subnav" id="sub-visual">
+          <li><a href="#photography">Photography</a></li>
+          <li><a href="#video">Video</a></li>
+        </ul>
+      </li>
       <li><a href="#zayform">Zay &amp; Form</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>

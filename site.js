@@ -3,8 +3,10 @@
 (function () {
   'use strict';
   var d = document;
-  var SECTIONS = ['home', 'about', 'explore', 'writing', 'photography', 'video',
-                  'publications', 'notes', 'podcast', 'zayform', 'contact'];
+  // Order of sections on the page. 'podcast' is switched off for now:
+  // to bring it back, add 'podcast' here and a Podcast link to the menu in index.html.
+  var SECTIONS = ['home', 'about', 'explore', 'writing', 'publications', 'notes',
+                  'photography', 'video', 'zayform', 'contact'];
 
   /* ---------- small helpers ---------- */
   function esc(s) {
@@ -239,6 +241,26 @@
     function setMenu(o) { menu.classList.toggle('open', o); btn.setAttribute('aria-expanded', o); btn.textContent = o ? 'Close' : 'Menu'; }
     btn.addEventListener('click', function () { setMenu(!menu.classList.contains('open')); });
     menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+
+    // dropdown groups in the menu (Writing, Visual Work)
+    var subs = [].slice.call(d.querySelectorAll('.has-sub'));
+    function closeSubs(except) {
+      subs.forEach(function (h) {
+        if (h !== except) { h.classList.remove('open'); h.querySelector('.sub-toggle').setAttribute('aria-expanded', 'false'); }
+      });
+    }
+    subs.forEach(function (h) {
+      var b = h.querySelector('.sub-toggle');
+      b.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (!window.matchMedia('(min-width:1021px)').matches) return;
+        var o = !h.classList.contains('open');
+        closeSubs(h); h.classList.toggle('open', o); b.setAttribute('aria-expanded', o);
+      });
+      [].forEach.call(h.querySelectorAll('.subnav a'), function (a) { a.addEventListener('click', function () { closeSubs(); }); });
+    });
+    d.addEventListener('click', function () { closeSubs(); });
+    d.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeSubs(); });
 
     var els = d.querySelectorAll('.reveal,.mask');
     if ('IntersectionObserver' in window) {

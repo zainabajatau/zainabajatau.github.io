@@ -367,6 +367,22 @@ nav a::after{background:var(--glow);height:1px}
 .zf-logo img{width:100%;height:auto;display:block;border-radius:6px}
 .zf-logo p{margin-top:.8rem;font-family:var(--serif);font-style:italic;font-size:1.4rem;color:#d5c6ee;text-align:center}
 #podcast .wave{margin-top:1.2rem}
+/* dropdown navigation */
+.has-sub{position:relative}
+.sub-toggle{font:inherit;color:#cfd6cc;background:none;border:0;cursor:pointer;padding:.5rem 0;display:inline-flex;gap:.35rem;align-items:center;min-height:44px}
+.sub-toggle:hover,.sub-toggle:focus-visible,.has-sub.open>.sub-toggle{color:var(--glow)}
+.sub-toggle .caret{font-size:.7em;transition:transform .25s}
+.has-sub.open .caret{transform:rotate(180deg)}
+.has-sub .subnav{display:none;position:absolute;top:100%;left:-1rem;min-width:240px;background:var(--forest);border:1px solid rgba(246,240,228,.18);padding:.6rem 1rem;flex-direction:column;gap:0;font-size:.9rem;z-index:5}
+.has-sub.open .subnav{display:flex}
+@media(hover:hover) and (min-width:1021px){.has-sub:hover .subnav{display:flex}}
+.subnav a{display:block;padding:.5rem 0;color:#cfd6cc}
+@media(max-width:1020px){
+  .sub-toggle{font-family:var(--sans);font-size:.85rem;color:var(--glow);padding:1rem 0 .1rem;cursor:default;pointer-events:none;min-height:0}
+  .sub-toggle .caret{display:none}
+  .has-sub .subnav{display:flex;position:static;border:0;padding:0 0 .4rem 1rem;background:none;min-width:0;font-size:1.5rem;font-style:italic}
+  .subnav a{color:#f6f0e4;padding:.25rem 0}
+}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}

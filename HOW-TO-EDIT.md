@@ -72,7 +72,8 @@ Open **app.pagescms.org**, pick the repository, pick a section, change things, p
 
 The forms cover everything you read on the site. These few things are still in the code, so ask for help if you want them changed:
 
-- The **menu names** at the top, and the browser-tab **page title and description** (both are in `index.html`).
+- The **menu names and groups** at the top (Writing and Visual Work are dropdowns), and the browser-tab **page title and description**. All of these are in `index.html`.
+- The **Podcast** section is switched off for now. Its content file is still in the `content` folder. To bring it back, ask for help (it needs one line in `site.js` and a menu link).
 - Adding a **brand new section** (for example a "Shop" section) or removing one.
 - Changing **colours, fonts or layout**.
 
