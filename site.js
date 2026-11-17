@@ -312,7 +312,20 @@
         else if (!e.shiftKey && d.activeElement === last) { e.preventDefault(); first.focus(); }
       }
     });
+d.querySelectorAll('a[href="#photography"]').forEach(function (link) {
+  link.addEventListener('click', function (e) {
+    var target = d.getElementById('photography');
+    if (!target) return;
 
+    e.preventDefault();
+    history.pushState(null, '', '#photography');
+
+    target.scrollIntoView({
+      behavior: 'instant',
+      block: 'start'
+    });
+  });
+});
     if (location.hash.length > 1) {
   var t = d.getElementById(decodeURIComponent(location.hash.slice(1)));
 
