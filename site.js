@@ -314,9 +314,22 @@
     });
 
     if (location.hash.length > 1) {
-      var t = d.getElementById(decodeURIComponent(location.hash.slice(1)));
-      if (t) t.scrollIntoView();
-    }
+  var t = d.getElementById(decodeURIComponent(location.hash.slice(1)));
+
+  if (t) {
+    t.scrollIntoView({ behavior: 'instant', block: 'start' });
+
+    var images = Array.from(document.images).filter(function (img) {
+      return !img.complete;
+    });
+
+    images.forEach(function (img) {
+      img.addEventListener('load', function () {
+        t.scrollIntoView({ behavior: 'instant', block: 'start' });
+      }, { once: true });
+    });
+  }
+}
   }
 
   /* ---------- load content, build, start ---------- */
