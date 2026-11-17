@@ -350,5 +350,14 @@
       }
     }
     init();
+     if (location.hash === '#photography') {
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      var section = document.getElementById('photography');
+      if (section) section.scrollIntoView();
+    }, 500);
+  });
+}
+
   });
 })();
